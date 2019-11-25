@@ -1,6 +1,6 @@
 # Logback extras
 
-Extras and helpers for logback logging.
+Extras and helpers for Logback logging.
 
 Does not introduce additional dependencies.
 
@@ -17,6 +17,12 @@ period, and after that resumes logging the duplicate until the threshold is hit 
 
 When dealing with misconfigured or poorly implemented logging, this saves your logs from getting flooded with duplicate
 messages, while still logging some of them in short bursts for a chance to be seen and possibly fixed.
+
+This filter is similar to the "burst filter" [sometimes](https://jira.qos.ch/browse/LOGBACK-803) 
+[requested](https://jira.qos.ch/browse/LOGBACK-223) for Logback and since some time back 
+[available in Log4j](https://logging.apache.org/log4j/2.x/manual/filters.html#BurstFilter), but is more conservative in 
+that it only filters duplicates as those are per definition noise, while meaningful logging may be suppressed by a 
+more general burst filter.
 
 ### Usage
 
