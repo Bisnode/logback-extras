@@ -1,6 +1,8 @@
 # Logback extras
 
-They do not introduce additional dependencies.
+Extras and helpers for logback logging.
+
+Does not introduce additional dependencies.
 
 ### Installation
 
