@@ -16,9 +16,7 @@ jobs:
       - name: Create output directory for artifacts
         run: mkdir -p target/artifacts
       - name: Copy artifact to artifacts directory
-        run: cp target/logback-extras-$PROJECT_VERSION.jar target/artifacts/
-        env:
-          PROJECT_VERSION: $(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)
+        run: cp target/logback-extras-*.jar target/artifacts/
       - uses: actions/upload-artifact@v1
         with:
           name: logback-extras
