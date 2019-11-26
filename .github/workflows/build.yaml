@@ -17,5 +17,5 @@ jobs:
         env:
           PROJECT_VERSION: $(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)
         with:
-          name: opa-gradle-plugin
-          path: target/logback-extras-$PROJECT_VERSION.jar
+          name: logback-extras-$PROJECT_VERSION.jar
+          path: target
