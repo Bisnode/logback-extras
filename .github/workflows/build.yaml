@@ -13,9 +13,13 @@ jobs:
           java-version: '8.x.x'
       - name: Build library
         run: mvn package
-      - uses: actions/upload-artifact@v1
+      - name: Create output directory for artifacts
+        run: mkdir -p target/artifacts
+      - name: Copy artifact to artifacts directory
+        run: cp target/logback-extras-$PROJECT_VERSION.jar target/artifacts/
         env:
           PROJECT_VERSION: $(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)
+      - uses: actions/upload-artifact@v1
         with:
-          name: logback-extras-$PROJECT_VERSION.jar
-          path: target
+          name: logback-extras
+          path: target/artifacts
