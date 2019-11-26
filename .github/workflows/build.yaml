@@ -14,10 +14,8 @@ jobs:
       - name: Build library
         run: mvn package
       - uses: actions/upload-artifact@v1
+        env:
+          PROJECT_VERSION: $(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)
         with:
-          env:
-            PROJECT_VERSION: $(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)
           name: opa-gradle-plugin
           path: target/logback-extras-${PROJECT_VERSION}.jar
-
-
