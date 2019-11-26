@@ -8,6 +8,29 @@
     <artifactId>logback-extras</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <name>Logback Extras</name>
+    <description>Extras and helpers for Logback logging</description>
+    <url>https://github.com/Bisnode/logback-extras</url>
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Anders Eknert</name>
+            <email>anders.eknert@bisnode.com</email>
+            <organization>Bisnode</organization>
+            <organizationUrl>https://www.bisnode.com</organizationUrl>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:git://github.com/Bisnode/logback-extras.git</connection>
+        <developerConnection>scm:git:git://github.com/Bisnode/logback-extras.git</developerConnection>
+        <url>https://github.com/Bisnode/logback-extras</url>
+    </scm>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -26,6 +49,20 @@
                         <arg>-Xlint:all</arg>
                     </compilerArgs>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
