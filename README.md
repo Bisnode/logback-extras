@@ -1,4 +1,5 @@
 # Logback extras
+![](https://github.com/Bisnode/logback-extras/workflows/build/badge.svg)
 
 Extras and helpers for Logback logging.
 
