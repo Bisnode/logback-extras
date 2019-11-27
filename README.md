@@ -3,11 +3,22 @@
 
 Extras and helpers for Logback logging.
 
-Does not introduce additional dependencies.
-
 ### Installation
 
-TBD
+#### Maven
+
+```xml
+<dependency>
+    <groupId>com.bisnode.logging</groupId>
+    <artifactId>logback-extras</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+#### Gradle
+```groovy
+implementation group: 'com.bisnode.logging', name: 'logback-extras', version: '1.0.0'
+```
 
 ## Duplicate message cooldown filter
 
@@ -49,6 +60,8 @@ In your Logback XML configuration, add a `turboFilter` configuration pointing to
 * `acceptableDuplicateFrequencyPerSecond`: Acceptable duplicate frequency per second. This number will be subtracted 
   from the duplicate counter every second. Default 1.
 
+### Dependencies
 
+This package does not introduce additional dependencies.
 
 
