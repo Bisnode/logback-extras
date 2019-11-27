@@ -96,6 +96,8 @@ public class DuplicateMessageCooldownFilter extends TurboFilter {
 
     /**
      * Set the configured number of duplicate messages that should trigger a cooldown period.
+     *
+     * @param cooldownInitiationThreshold Number of messages required to trigger cooldown
      */
     public void setCooldownInitiationThreshold(int cooldownInitiationThreshold) {
         this.cooldownInitiationThreshold = cooldownInitiationThreshold;
@@ -112,6 +114,8 @@ public class DuplicateMessageCooldownFilter extends TurboFilter {
 
     /**
      * Set the configured duration of the cooldown period, i.e. how long duplicate messages should be suppressed.
+     *
+     * @param cooldownDurationSeconds Number of seconds to suppress duplicate log message
      */
     public void setCooldownDurationSeconds(int cooldownDurationSeconds) {
         this.cooldownDurationSeconds = cooldownDurationSeconds;
@@ -130,6 +134,8 @@ public class DuplicateMessageCooldownFilter extends TurboFilter {
     /**
      * Set the configured acceptable duplicate frequency per second. This number will be subtracted from the duplicate
      * counter each second.
+     *
+     * @param acceptableDuplicateFrequencyPerSecond Amount of duplicate messages to accept per seconnd
      */
     public void setAcceptableDuplicateFrequencyPerSecond(int acceptableDuplicateFrequencyPerSecond) {
         this.acceptableDuplicateFrequencyPerSecond = acceptableDuplicateFrequencyPerSecond;
